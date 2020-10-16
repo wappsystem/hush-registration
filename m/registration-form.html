@@ -1,0 +1,124 @@
+<div id=D__ID>
+    <div class='p-4' style='max-width:800px;margin-left:auto;margin-right:auto;background-color:rgb(250,250,234,0.8);border-radius:20px'>
+        <form id=F__ID>
+            <div id=S1__ID>
+                <div id=page1__ID class="row  mr-0 ml-0 p-4"">
+                    <div class="col-lg-1 col-sm-0 ">
+                    </div>
+                    <div class="col-lg-9 col-sm-12 text-center">
+                        <b>Hush Study - Registration Form</b>
+                    </div>
+                    <div class="col-lg-1 col-sm-0 ">
+                    </div>
+                </div>
+                <div id=quest3__ID style='max-width:800px;margin-left:auto;margin-right:auto;'>
+                    <div class="form-group">
+                        <div class="questiongroup ">
+                            <fieldset class="subquestions">
+                                <label><span class="">1. Registration number (Sxxx)</span>
+                                      <input class="form-control" type="text" name="screening_number" required >
+                                </label><br>
+                          </fieldset>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="questiongroup ">
+                            <fieldset class="subquestions">
+                                <label><span class="">1. First name</span>
+                                      <input class="form-control" type="text" name="first_name" required>
+                                </label><br>
+                                <label><span class="">2. Last name</span>
+                                    <input class="form-control" type="text" name="last_name" required>
+                              </label><br>
+                          </fieldset>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="questiongroup ">
+                            <fieldset class="">
+                                <label><span class="">3.	Preferred contact number</span>
+                                </label>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="questiongroup ">
+                            <fieldset class="subquestions">
+                                <label><span>Mobile</span>
+                                    <input type="tel" class="form-control" name="mobile" id="mobileNumber__ID" required placeholder="XXXX-XXX-XXX" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}">
+                                </label><br>
+                                <label><span class="">Landline</span>
+                                    <input type="tel" class="form-control" name="phone" id="landline__ID" required placeholder="XXXX-XXXX" pattern="[0-9]{4}-[0-9]{4}">
+                                </label><br>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="questiongroup ">
+                            <fieldset class="subquestions">
+                                <label><span class="">4. Email</span>
+                                    <input class="form-control" type="email" name="email_address" required>
+                                </label><br>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="questiongroup ">
+                            <fieldset class="subquestions">
+                                <label style="width:100%"><span class="">5. Address</span>
+                                    <textarea class="form-control" name="address" required></textarea>
+                                </label><br>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div style="text-align:right">
+                        <button type="submit" id=submit__ID style="border-radius:2rem;background-color: #748A66;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-lg">Submit</button>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="text-center">
+                        Contact Us
+                        <br><br>
+                        Phone: (02) XXXX XXXXX<br>
+                        Email: hush.study@sydney.edu.au<br><br>
+                        Thanks you for your time and effort,<br>
+                        <b>The Hush Study Research Team</b><br>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function F__ID() {
+            VmInclude: __COMPONENT__/f/form.01.js
+            //---------------------------------------
+            //-------------------------------------
+            $('#mobileNumber__ID').on('change',function(){
+                var mn=$('#mobileNumber__ID').val();
+                if(mn.length==10){
+                    $('#mobileNumber__ID').val(mn.substring(0,4)+'-'+mn.substring(4,7)+'-'+mn.substring(7,10))
+                    $("input[name='phone']").removeAttr('required')
+
+                }
+            })
+            //-------------------------------------
+            $('#landline__ID').on('change',function(){
+                var mn=$('#landline__ID').val();
+                if(mn.length==8){
+                    $('#landline__ID').val(mn.substring(0,4)+'-'+mn.substring(4,8))
+                    $("input[name='mobile']").removeAttr("required")
+                }
+            })
+        }
+    </script>
+    <style>
+        #D__ID {
+            font-family: 'Roboto Slab';
+            animation: vm_module_fadein 1.0s;
+            color: #000;
+            /*background-color: #FFF;*/
+            min-height: 800px;
+        }
+        VmInclude:__CURRENT_PATH__/wappsystem-form.css
+    </style>
+</div>
